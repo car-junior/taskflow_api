@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: taskflow
+  host: localhost
+  port: 5434
+  username: postgres
+  password: postgres
+  schema_search_path: "dbo, public"
+
+test:
+  <<: *default
+  database: taskflow_test
+  host: localhost
+  port: 5432
+  username: postgres
+  password: postgres
+  schema_search_path: "dbo, public"
