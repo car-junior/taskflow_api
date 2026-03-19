@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Users
-  class ListUserService
+  class ListUserService < BaseService
     DEFAULT_PER_PAGE = 10
     ALLOWED_ORDER_COLUMNS = %w[name email created_at].freeze
 
@@ -13,8 +13,7 @@ module Users
       users = Taskflow::Model::User.all
       users = apply_filters(users)
       users = apply_order(users)
-      users = apply_pagination(users)
-      users
+      apply_pagination(users)
     end
 
     private

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module Users
-  class UpdateUserService
+  class UpdateUserService < BaseService
     Result = Struct.new(:success?, :user, :errors, :status)
 
     def initialize(user, update_user_params)
