@@ -13,7 +13,7 @@ module Users
       user.save!
       Result.new(true, user, nil, :created)
     rescue ActiveRecord::RecordInvalid => e
-      Result.new(false, nil, e.record.errors.full_messages, :unprocessable_entity)
+      Result.new(false, nil, e.record.errors.full_messages, :unprocessable_content)
     end
 
   end

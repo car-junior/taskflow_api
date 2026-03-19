@@ -16,6 +16,9 @@ module TaskflowApi
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w(assets tasks))
 
+    config.time_zone = 'Brasilia'
+    config.active_record.default_timezone = :local
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -28,5 +31,8 @@ module TaskflowApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.i18n.default_locale = :"pt-BR"
+    config.i18n.available_locales = [:"pt-BR", :en]
   end
 end

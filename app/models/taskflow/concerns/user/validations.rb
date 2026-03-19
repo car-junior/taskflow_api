@@ -17,7 +17,7 @@ module Taskflow
         private
 
         def valid_cpf
-          errors.add(:cpf, 'cpf invalid') unless CPF.valid?(self.cpf)
+          errors.add(:cpf, :invalid_cpf) unless CPF.valid?(self.cpf)
         end
       end
     end
