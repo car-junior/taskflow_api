@@ -1,0 +1,1 @@
+json.call(@user, :id, :name, :last_name, :masked_cpf, :email, :phone_number)

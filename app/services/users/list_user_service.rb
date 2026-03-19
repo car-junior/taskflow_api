@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module Users
-  class ListUsersService
+  class ListUserService
     DEFAULT_PER_PAGE = 10
     ALLOWED_ORDER_COLUMNS = %w[name email created_at].freeze
 
